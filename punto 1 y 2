@@ -1,0 +1,45 @@
+# PUNTO 1
+# Hecho por Idalia Hernandez Lopez y Marieth Guillen García
+
+#maximo
+vector<-sample(0:100,10)
+lvector<- length(vector)
+vmax<- vector[1]
+for (i in 1:10){
+  if (vector[i]> vmax){
+    vmax<- vector[i]
+  }
+}
+cat("el maximo es ",vmax)
+
+lvector<- length(vector)
+vmin<- vector[1]
+for (i in 1:10){
+  if (vector[i]<vmin){
+    vmin<- vector[i]
+  }
+}
+cat("el minimo es ",vmin)
+
+
+# PUNTO 2
+# Hecho por Idalia Hernandez Lopez y Marieth Guillen García
+
+misdatos <- rnorm(100)
+indices = sample(1:100, 10)
+misdatos[indices]<-NA
+
+misdatos <- misdatos[which(!is.na(misdatos))]
+cat(misdatos)
+
+#promedio
+promedio <- mean(misdatos)
+mean(misdatos[!(is.na(misdatos))])
+misdatos[is.na(misdatos)]<-mean(misdatos[!(is.na(misdatos))])
+
+#Desviasion estantar
+
+desviasion <- sd(misdatos)
+sd(misdatos[!(is.na(misdatos))])
+misdatos[is.na(misdatos)]<-sd(misdatos[!(is.na(misdatos))])
+cat("El promedio es: ", prom, " y la desviacion estandar es: ", desviasion)
